@@ -1,3 +1,4 @@
+// Mobile menu toggle
 const menu = document.querySelector('.navbar-toggle');
 const menuLinks = document.querySelector('.navbar-menu');
 
@@ -7,7 +8,7 @@ menu.addEventListener('click', function() {
 });
 
 
-
+// Fly in animation
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if(entry.isIntersecting) {
@@ -20,3 +21,44 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
+
+// Rating swiper
+const carousel = document.querySelector('.rating-carousel');
+const slider = document.querySelector('.rating-slider');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+var direction = -1;
+prevBtn.addEventListener('click', () => {
+    if(direction === -1) {
+        slider.appendChild(slider.firstElementChild);
+        direction = 1;
+    }
+    carousel.style.justifyContent = 'flex-end';
+    slider.style.transform = 'translate(20%)';
+});
+
+nextBtn.addEventListener('click', () => {
+    if(direction === 1) {
+        slider.prepend(slider.lastElementChild);
+        direction = -1;
+    }
+    carousel.style.justifyContent = 'flex-start';
+    slider.style.transform = 'translate(-20%)';
+});
+
+slider.addEventListener('transitionend', () => {
+    if(direction === -1) {
+        slider.appendChild(slider.firstElementChild);
+    }
+    else if(direction === 1) {
+        slider.prepend(slider.lastElementChild);
+    }
+
+    slider.style.transition = 'none';
+    slider.style.transform = 'translate(0)';
+    setTimeout(() => {
+        slider.style.transition = 'all 0.3s ease';
+    })
+});
