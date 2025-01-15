@@ -28,6 +28,15 @@ const carousel = document.querySelector('.rating-carousel');
 const slider = document.querySelector('.rating-slider');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
+const allSlides = document.querySelectorAll('.rating-wrapper');
+const mediaQuery = window.matchMedia('(max-width: 960px)');
+
+if(mediaQuery.matches) {
+    slider.firstElementChild.classList.add('focused');
+}
+else {
+    slider.firstElementChild.nextElementSibling.classList.add('focused');
+}
 
 var direction = -1;
 prevBtn.addEventListener('click', () => {
@@ -35,8 +44,19 @@ prevBtn.addEventListener('click', () => {
         slider.appendChild(slider.firstElementChild);
         direction = 1;
     }
+
+    allSlides.forEach(slide => {
+        slide.classList.remove('focused');
+    });
+
     carousel.style.justifyContent = 'flex-end';
     slider.style.transform = 'translate(20%)';
+    if(mediaQuery.matches) {
+        slider.lastElementChild.previousElementSibling.classList.add('focused');
+    }
+    else {
+        slider.lastElementChild.previousElementSibling.previousElementSibling.classList.add('focused');
+    }
 });
 
 nextBtn.addEventListener('click', () => {
@@ -44,8 +64,19 @@ nextBtn.addEventListener('click', () => {
         slider.prepend(slider.lastElementChild);
         direction = -1;
     }
+
+    allSlides.forEach(slide => {
+        slide.classList.remove('focused');
+    });
+
     carousel.style.justifyContent = 'flex-start';
     slider.style.transform = 'translate(-20%)';
+    if(mediaQuery.matches) {
+        slider.firstElementChild.nextElementSibling.classList.add('focused');
+    }
+    else {
+        slider.firstElementChild.nextElementSibling.nextElementSibling.classList.add('focused');
+    }
 });
 
 slider.addEventListener('transitionend', () => {

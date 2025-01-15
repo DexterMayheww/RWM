@@ -15,7 +15,7 @@
 body {
     /* background-color: #FBEFCC; */
     background-image: url('Images/logorwm.png');
-    background-repeat: space;
+    background-repeat: no-repeat;
     background-size: 50%;
     background-position: center;
     background-attachment: fixed;
@@ -331,7 +331,6 @@ body {
 
 .main {
     padding-top: 60px;
-    margin-bottom: 45px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -339,12 +338,13 @@ body {
 }
 
 .main .main-contact {
-    width: 90%;
+    /* background: linear-gradient(#206e4ad9 50%, #253b1ad9 99%); */
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 40px;
+    padding-bottom: 80px;
 }
 
 .main-contact .text {
@@ -380,6 +380,7 @@ body {
 }
 
 .main-contact .buttons {
+    width: 40%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -387,17 +388,15 @@ body {
     transition: all 0.3s ease;
 }
 
-.main-contact .buttons a {
+.main-contact .buttons .button-background {
     margin: 5px;
     text-decoration: none;
     text-align: center;
-    color: white;
+    color: #fff;
     font-size: 1.1rem;
     font-family: "Poppins", serif;
     font-weight: 400;
-}
 
-.main-contact .buttons .button-background {
     width: 100%;
     height: 100%;
     padding-top: 10px;
@@ -405,37 +404,43 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     background-color: #198754;
-    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    /* border: 2px solid #87194C; */
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
-.main-contact .buttons a:nth-child(1):hover {
-    .button-background {
-        background-color: #175538;
-        transition: all 0.3s ease;
-    }
-    
-    .button-background p {
-        transform: scale(1.15);
-        transition: all 0.3s ease;
-    }
+.button-background .cover {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #87194C;
+    transition: all 0.35s ease;
+    border-radius: 30px;
+    z-index: -1;
 }
 
-.main-contact .buttons a:nth-child(2):hover {
-    .button-background {
-        background-color: #175538;
-        transition: all 0.3s ease;
-    }
-    
-    .button-background p {
-        transform: scale(1.15);
-        transition: all 0.3s ease;
+.main-contact .buttons .button-background:hover {
+    transform: scale(1.05);
+    color: #fff;
+    .cover {
+        width: 100%;
     }
 }
 
 .main-specialization {
     width: 100%;
-    /* background-color: #0B1408; */
-    background-color: black;
+    background-color: #000;
+    /* background: linear-gradient(#253b1ad9 50%, #206e4ad9 99%); */
+    padding-bottom: 45px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -478,6 +483,9 @@ body {
 }
 
 @media screen and (max-width: 960px) {
+    .main-contact .buttons {
+        width: 70%;
+    }
     .main-specialization {
         flex-direction: column-reverse;
     }
@@ -487,9 +495,9 @@ body {
     }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 768px) {
     .main-contact .buttons {
-        width: 100%;
+        width: 90%;
         flex-direction: column;
     }
 
@@ -503,6 +511,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    /* background: linear-gradient(#206e4ad9, #fbefccd9); */
 }
 
 .services .line-divider {
@@ -628,6 +637,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    /* background: linear-gradient(#fbefccd9, #206e4ad9, rgba(212, 212, 212, 0.5)); */
 }
 
 .price .price-wrapper-container {
@@ -648,7 +658,7 @@ body {
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
-    background-color: rgba(250, 250, 250, 0.8);
+    background-color: rgba(250, 250, 250, 1);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
 }
@@ -776,7 +786,7 @@ body {
 
 .price-wrapper:nth-child(1) .price-button a:hover {
     .button-background {
-        background-color: rgba(0, 183, 255, 0.5);
+        background-color: rgba(0, 139, 194, 0.8);
         border-color: rgba(90, 142, 163, 0.85);
         transition: all 0.3s ease;
     }
@@ -842,8 +852,7 @@ body {
     background-color: rgba(212, 212, 212, 0.5);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
-    margin-top: 20px;
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 50px;
     width: 100%;
     height: 60vh;
@@ -915,6 +924,7 @@ body {
     font-weight: 200;
     margin-bottom: 35px;
     z-index: 1;
+    text-transform: uppercase;
 }
 
 .map iframe {
@@ -1032,10 +1042,9 @@ body {
 
 .rating .rating-wrapper-container {
     padding-top: 30px;
-    padding-bottom: 100px;
     min-height: 200px;
     width: 90%;
-    margin: 20px 10px;
+    margin: 50px 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1051,7 +1060,7 @@ body {
 
 .rating-wrapper-container .rating-carousel {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -1059,7 +1068,7 @@ body {
 }
 
 .rating-carousel .rating-slider {
-    height: 100%;
+    height: fit-content;
     width: 166.65%;
     display: flex;
     flex-shrink: 0;
@@ -1077,12 +1086,13 @@ body {
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     padding: 30px;
+    scale: 0.85;
 }
 
 .rating-wrapper .rating-profile {
@@ -1305,3 +1315,17 @@ body {
         }
     }
 } */
+
+.rating-wrapper.focused {
+    animation: zoom 1s forwards;
+}
+
+@keyframes zoom {
+    0% {
+
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.8);
+        transform: scale(1.15);
+    }
+}
