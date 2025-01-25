@@ -31,10 +31,7 @@ const nextBtn = document.querySelector('.next-btn');
 const allSlides = document.querySelectorAll('.rating-wrapper');
 const mediaQuery = window.matchMedia('(max-width: 960px)');
 
-if(mediaQuery.matches) {
-    slider.firstElementChild.classList.add('focused');
-}
-else {
+if(!mediaQuery.matches) {
     slider.firstElementChild.nextElementSibling.classList.add('focused');
 }
 
@@ -51,10 +48,7 @@ prevBtn.addEventListener('click', () => {
 
     carousel.style.justifyContent = 'flex-end';
     slider.style.transform = 'translate(20%)';
-    if(mediaQuery.matches) {
-        slider.lastElementChild.previousElementSibling.classList.add('focused');
-    }
-    else {
+    if(!mediaQuery.matches) {
         slider.lastElementChild.previousElementSibling.previousElementSibling.classList.add('focused');
     }
 });
@@ -71,10 +65,7 @@ nextBtn.addEventListener('click', () => {
 
     carousel.style.justifyContent = 'flex-start';
     slider.style.transform = 'translate(-20%)';
-    if(mediaQuery.matches) {
-        slider.firstElementChild.nextElementSibling.classList.add('focused');
-    }
-    else {
+    if(!mediaQuery.matches) {
         slider.firstElementChild.nextElementSibling.nextElementSibling.classList.add('focused');
     }
 });
