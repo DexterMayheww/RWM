@@ -17,7 +17,8 @@ html {
 }
 
 body {
-    /* background-color: #FBEFCC; */
+    background-color: #FBEFCC;
+    backdrop-filter: blur(4px);
     background-image: url('Images/logorwm.png');
     background-repeat: no-repeat;
     background-size: 50%;
@@ -340,7 +341,7 @@ body {
 
 @media screen and (max-width: 500px) {
     .navbar .navbar-logo a {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 }
 
@@ -888,7 +889,6 @@ body {
 } */
 
 .price-wrapper-container .price-wrapper {
-    min-height: 950px;
     width: 32%;
     margin-bottom: 50px;
     background-color: #f5f5dcd9;
@@ -902,16 +902,22 @@ body {
     flex-direction: column;
 }
 
+.price-wrapper li {
+    height: 16.66%;
+}
+
 .price-wrapper-container .price-wrapper:nth-child(2) {
     background-color: #dcd7ffd9;
 }
 
 .price-wrapper .price-tier {
+    min-height: 60px;
     margin: 40px 40px 20px 40px;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 600;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     p:nth-child(2) {
         height: 40px;
@@ -927,7 +933,7 @@ body {
 }
 
 .price-wrapper .price-detail {
-    margin: 0 40px 50px 40px;
+    margin: 0 40px 20px 40px;
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -1078,6 +1084,12 @@ body {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .price-wrapper .price-tier {
+        font-size: 1.5rem;
+    }
+}
+
 @media screen and (max-width: 960px) {
     .price {
         flex-direction: column;
@@ -1092,6 +1104,10 @@ body {
     .price-wrapper-container .price-wrapper {
         width: 60%;
     }
+
+    .price-wrapper .price-tier {
+        font-size: 1.3rem;
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -1101,6 +1117,12 @@ body {
     }
     .price-wrapper-container .price-wrapper {
         width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .price .price-wrapper .price-tier p:nth-child(2) {
+        font-size: 0.85rem;
     }
 }
 

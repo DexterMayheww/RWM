@@ -193,7 +193,7 @@ body {
     width: 100%;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 960px) {
     .navbar-container {
         display: flex;
         margin: 0;
@@ -206,7 +206,15 @@ body {
     }
 
     .navbar-logo {
-        margin: 0 auto;
+        width: 100%;
+        a {
+            width: 100%;
+            justify-content: flex-start;
+        }
+
+        p {
+            margin: 0 auto;
+        }
     }
 
     .navbar-menu {
@@ -325,7 +333,7 @@ body {
 
 @media screen and (max-width: 500px) {
     .navbar .navbar-logo a {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 }
 
@@ -338,6 +346,7 @@ body {
     justify-content: space-between;
     position: relative;
     align-items: center;
+    justify-content: center;
 }
 
 .main .contact-wrapper {
@@ -422,6 +431,64 @@ body {
     }
 }
 
+.contact-wrapper .service-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 450px;
+    min-height: 300px;
+    margin: 20px;
+    padding: 20px 20px 20px 30px;
+    font-family: "Kumbh Sans", sans-serif;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: rgba(212, 212, 212, 0.5);
+    border: 1px solid rgba(39, 39, 39, 0.3);
+    border-radius: 10px;
+}
+
+.contact-wrapper .what-we-provide {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.service-wrapper .icon-container {
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    display: flex;
+    background-color: rgb(101, 143, 235);
+}
+
+.service-wrapper img {
+    margin: 4px;
+    filter: invert(100%) sepia(7%) saturate(0%) hue-rotate(46deg) brightness(107%) contrast(108%);
+}
+
+.service-wrapper h1 {
+    font-size: 1.875rem;
+    font-weight: 400;
+}
+
+.service-wrapper i {
+    font-size: 1.25rem;
+}
+
+.service-wrapper ul {
+    padding-top: 10px;
+}
+
+.service-wrapper ul li {
+    list-style-position: inside;
+    padding-left: 20px;
+    font-size: 0.875rem;
+}
+
+.service-wrapper ul li ul li {
+    padding-left: 35px;
+}
+
 .main .time-wrapper-container {
     display: flex;
     align-items: center;
@@ -460,11 +527,21 @@ body {
 
 @media screen and (max-width: 960px) {
     .main {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .main .contact-wrapper, .main .time-wrapper-container {
         width: 100%;
+    }
+
+    .contact-wrapper .service-wrapper {
+        min-height: 350px;
+        width: 90%;
+        min-width: 100px;
+    }
+
+    .service-wrapper ul li {
+        font-size: 1.25rem;
     }
 
     .main .time-wrapper-container {
@@ -519,7 +596,7 @@ body {
     flex-direction: row;
 }
 
-.contact-wrapper:nth-child(1) img {
+.contact .contact-wrapper:nth-child(1) img {
     width: 72px;
     height: 96px;
 }
