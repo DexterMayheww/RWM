@@ -1614,7 +1614,15 @@ margin: 0;
     .rating-wrapper-container .rating-wrapper {
         scale: 0.9;
         width: 90%;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: #315335;
+    }
+
+    .rating-wrapper p {
+        color: #fff;
+    }
+
+    .rating-wrapper .rating-profile p {
+        color: #fff;
     }
 
     .footer .contact {
