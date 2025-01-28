@@ -633,7 +633,8 @@ margin: 0;
     }
     
     .main-specialization .text {
-        width: 100%;
+        width: auto;
+        padding-right: 0;
     }
 
     .selling img {
