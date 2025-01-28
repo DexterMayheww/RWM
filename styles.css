@@ -5,6 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,40..300&display=swap');
 @import url("https://api.fontshare.com/v2/css?f[]=tabular@1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
     margin: 0;
@@ -17,7 +20,7 @@ html {
 }
 
 body {
-    background-color: #FBEFCC;
+    background-color: #d1e6ba;
     backdrop-filter: blur(4px);
     background-image: url('Images/logorwm.png');
     background-repeat: no-repeat;
@@ -47,8 +50,7 @@ body {
 
 .navbar {
     top: 0;
-    /* background-color: #253B1A; */
-    background-color: white;
+    background-color: #e5f5dc;
     height: 80px;
     font-family: "Kumbh Sans", serif;
     display: flex;
@@ -167,7 +169,7 @@ body {
     width: 100%;
     border: none;
     outline: none;
-    border-radius: 30px;
+    border-radius: 13px;
     background-color: #198754;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -185,9 +187,9 @@ body {
     width: 0%;
     height: 100%;
     z-index: -1;
-    background-color: #87194C;
+    background-color: #166f01;
     transition: all 0.35s ease;
-    border-radius: 30px;
+    border-radius: 13px;
 }
 
 .button p {
@@ -226,7 +228,7 @@ body {
     }
 
     .navbar-menu {
-        top: 0;
+        top: 30px;
         margin: 0;
         display: flex;
         flex-direction: column;
@@ -263,7 +265,7 @@ body {
         /* background-color: #253B1A; */
         border-bottom-left-radius : 20px;
         border-bottom-right-radius : 20px;
-        top: 100%;
+        top: 145%;
         transition: all 0.5s ease;
         z-index: 99;
         height: 45vh;
@@ -272,21 +274,35 @@ body {
     }
 
     .navbar-menu.active .menu-item {
+        width: 80%;
         padding-top: 0px;
-        padding-bottom: 0px;
-    }
-
-    .navbar-menu.active li ul li:nth-child(1) {
-        padding-top: 0px;
-    }
-
-    .navbar-menu.active li ul li:nth-child(3) {
         padding-bottom: 0px;
     }
 
     .navbar-menu.active .menu-item ul {
         width: 100%;
         display: flex;
+    }
+
+    .menu-item ul li {
+        width: 50%;
+        padding: 10px 0;
+        border: 1px solid #000;
+        border-radius: 8px;
+    }
+
+    .menu-item ul li::after {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5px;
+    }
+
+    .menu-item ul li:nth-child(1)::after {
+        width: 50%;
+    }
+
+    .menu-item ul li:hover::after {
+        width: 50%;
     }
 
     .navbar .navbar-toggle {
@@ -346,27 +362,32 @@ body {
 }
 
 .main {
-    padding-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     /* backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(4px);
-    background-color: rgba(0, 0, 0, 0.25); */
+    -webkit-backdrop-filter: blur(2px); */
 }
 
 .marquee {
-    width: 90%;
+    position: sticky;
+    z-index: 999;
+    top: 80px;
+    width: 100%;
     height: fit-content;
     padding: 10px 0;
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto;
     color: #000;
-    white-space: nowrap;
+    background-color: #e5f5dc;
     overflow: hidden;
-    box-sizing: border-box;
-    position: relative;
-    mask-image: linear-gradient(to right, transparent, #000 10% 95%, transparent);
+    box-shadow: 0 5px 15px -8px #0000008c;
+}
+
+.marquee-content {
+    white-space: nowrap;
+    mask-image: linear-gradient(to right, transparent, #000 5% 95%, transparent);
 }
 
 .marquee::before, .marquee::after {
@@ -386,7 +407,7 @@ body {
     bottom: 0;
 }
 
-.marquee p {
+.marquee-content p {
     display: inline-block;
     padding-left: 100%;
     animation: marquee 15s linear infinite;
@@ -409,37 +430,41 @@ body {
     justify-content: center;
     align-items: center;
     padding-bottom: 80px;
-
+    background-color: #d1e6ba;
 }
 
 .main-contact .text {
-    width: 90%;
+    width: 70%;
     text-align: center;
 }
 
 .main-contact h1, h3, h5 {
-    font-family: "Arial";
     text-align: center;
 }
 
 .main-contact h1 {
     padding: 2px;
-    background-color: black;
+    /* background-color: black; */
     font-optical-sizing: auto;
     display: inline;
-    color: white;
-    font-size: 2.2rem;
+    color: #000;
+    font-size: 5rem;
+    font-family: "Anton";
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 300;
 }
 
 .main-contact h3 {
-    padding-top: 10px;
-    padding-bottom: 20px;
-    font-size: 2.2rem;
+    padding: 10px 10px 20px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Space Mono";
 }
 
 .main-contact h5 {
-    font-family: "Inter", serif;
-    font-size: 0.775rem;
+    font-family: "Space Mono";
+    font-size: 1rem;
     font-weight: 500;
     padding-bottom: 30px;
 }
@@ -461,7 +486,6 @@ body {
     font-size: 1.25rem;
     font-family: "Poppins", serif;
     font-weight: 400;
-
     width: 100%;
     height: 100%;
     padding: 15px 30px 15px 30px;
@@ -469,7 +493,7 @@ body {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     /* border: 2px solid #87194C; */
-    border-radius: 45px;
+    border-radius: 13px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -484,9 +508,9 @@ body {
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #87194C;
+    background-color: #166f01;
     transition: all 0.35s ease;
-    border-radius: 30px;
+    border-radius: 13px;
     z-index: -1;
 }
 
@@ -500,32 +524,32 @@ body {
 
 .main-specialization {
     width: 100%;
-    background-color: #000;
+    background-color: #315335;
     /* background: linear-gradient(#253b1ad9 50%, #206e4ad9 99%); */
-    padding-bottom: 45px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 .main-specialization .text {
-    padding: 35px;
-    max-width: 50%;
+    margin: 35px;
+    padding-right: 35px;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    color: white;
+    color: #fff;
     text-align: justify;
     justify-content: center;
-    font-family: "Arial";
+    font-family: "Kumbh Sans";
 }
 
-.main-specialization .text h2 {
-    font-size: 1.4rem;
+.main-specialization .text .what-do-we-do {
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .main-specialization .text p {
     font-size: 1.25rem;
-    font-family: "Times New Roman";
     line-height: 1.4;
 }
 
@@ -533,27 +557,101 @@ body {
     padding-bottom: 30px;
 }
 
-.main-specialization img {
-    width: 50%;
-    max-width: 360px;
-    height: auto;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: -80px;
-
+.selling {
+    font-family: "Kumbh Sans";
+    text-align: justify;
+    color: #fff;
+    margin: 0 35px 35px 35px;
 }
 
+.selling .selling-text {
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.selling img {
+    margin-top: -250px;
+    margin-right: clamp(75px, 30% , 100px);
+    width: clamp(200px, 40% , 400px);
+    float: right;
+}
+
+.selling p, .selling ul {
+    width: 50%;
+    line-height: 1.4;
+}
+
+.selling ul li {
+    line-height: 1.4;
+    font-size: 1.25rem;
+    list-style-type: none;
+}
+
+.selling ul li:nth-child(1) {
+    margin-bottom: 20px;
+}
+
+.selling ul li:not(:nth-child(1)) {
+    margin-left: 20px;
+}
+
+/* .selling .spacer {
+    float: right;
+    height: 100%;
+    width: clamp(200px, 40%, 400px);
+    margin-left: 15px;
+    display: flex;
+    align-items: flex-end;
+    shape-outside: inset(calc(100% - clamp(200px, 40%, 400px)) 0 0);
+}
+
+.selling {
+display: flex;
+border: 1px solid;
+overflow: hidden;
+resize: horizontal;
+margin-bottom: 100px;
+text-align: justify;
+}
+
+.selling .selling-text {
+text-align: justify;
+font-size: 20px;
+margin: 0;
+} */
+
+
 @media screen and (max-width: 960px) {
+    .main-contact .text h1 {
+        font-size: 3rem;
+    }
     .main-contact .buttons {
         width: 70%;
     }
     .main-specialization {
-        flex-direction: column-reverse;
+        /* flex-direction: column-reverse; */
     }
     
     .main-specialization .text {
-        max-width: 100%;
+        width: 100%;
+    }
+
+    .selling img {
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+    .selling {
+        p {
+            width: 100%;
+        }
+        ul {
+            width: 100%;
+        }
+
+        ul li {
+            font-size: 0.85rem;
+        }
     }
 }
 
@@ -566,6 +664,11 @@ body {
     .main-contact .buttons a {
         width: 90%;
     }
+
+    .main-specialization .text p {
+        font-size: 0.85rem;
+    }
+
 }
 
 .services {
@@ -891,10 +994,10 @@ body {
 .price-wrapper-container .price-wrapper {
     width: 32%;
     margin-bottom: 50px;
-    background-color: #f5f5dcd9;
+    background-color: #e5f5dc;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    /* border: 1px solid rgba(0, 0, 0, 0.4); */
     border-radius: 30px;
     list-style-type: none;
     font-family: "Kumbh Sans", sans-serif;
@@ -902,17 +1005,13 @@ body {
     flex-direction: column;
 }
 
-.price-wrapper li {
-    height: 16.66%;
-}
-
 .price-wrapper-container .price-wrapper:nth-child(2) {
-    background-color: #dcd7ffd9;
+    background-color: #d3f3be;
 }
 
 .price-wrapper .price-tier {
     min-height: 60px;
-    margin: 40px 40px 20px 40px;
+    margin: 20px 40px 20px 40px;
     font-size: 1.7rem;
     font-weight: 600;
     display: flex;
@@ -928,7 +1027,7 @@ body {
         font-weight: 500;
         color: #fff;
         border-radius: 20px;
-        background-color: #206e4a;
+        background-color: #315335;
     }
 }
 
@@ -973,7 +1072,7 @@ body {
         height: 80px;
         border-radius: 40px;
         border: none;
-        background-color: #206e4a;
+        background-color: #315335;
         color: #fff;
         cursor: pointer;
         font-family: "Kumbh Sans", sans-serif;
@@ -997,7 +1096,7 @@ body {
         left: 0;
         height: 100%;
         width: 0;
-        background-color: #87194C;
+        background-color: #166f01;
         transition: all 0.4s ease;
         border-radius: 40px;
         z-index: -1;
@@ -1313,6 +1412,7 @@ body {
     cursor: pointer;
     z-index: 99;
     transition: all 0.4s ease;
+    background-color: #e5f5dc;
 }
 
 .rating-wrapper-container .prev-btn:hover, .rating-wrapper-container .next-btn:hover {
@@ -1320,7 +1420,6 @@ body {
         opacity: 1;
         transform: scale(1.3);
     }
-    background-color: rgba(212, 212, 212, 0.4);
 }
 
 .rating-wrapper-container .prev-btn {
@@ -1331,7 +1430,7 @@ body {
 .prev-btn img, .next-btn img {
     width: 30px;
     height: 30px;
-    opacity: 0.2;
+    opacity: 0.7;
     transition: all 0.3s ease;
 }
 
@@ -1363,10 +1462,9 @@ body {
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #e5f5dcbb;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     padding: 30px;
     scale: 0.65;
@@ -1374,6 +1472,14 @@ body {
 
 .rating-wrapper.focused {
     animation: zoom 0.65s forwards;
+
+    .rating-profile p {
+        color: #fff;
+    }
+
+    p {
+        color: #fff;
+    }
 }
 
 @keyframes zoom {
@@ -1381,7 +1487,7 @@ body {
 
     }
     100% {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: #315335;
         transform: scale(1.45);
     }
 }
@@ -1407,14 +1513,15 @@ body {
     margin-bottom: 20px;
 }
 
-.rating-profile h2 {
+.rating-wrapper .rating-profile p {
     padding-left: 10px;
-    color: #fff;
+    color: #000;
+    font-size: 1.7rem;
     font-family: "Kumbh Sans", sans-serif;
 }
 
 .rating-wrapper p {
-    color: white;
+    color: #000;
     font-family: "Kumbh Sans", sans-serif;
     font-size: 1.35rem;
     text-align: justify;
@@ -1436,7 +1543,7 @@ body {
     align-items: center;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    background-color: rgba(212, 212, 212, 1);
+    background-color: #e5f5dc;
 }
 
 .contact .contact-wrapper {
@@ -1585,6 +1692,15 @@ body {
     transition-delay: 200ms;
 }
 
+.footer .copyright {
+    font-weight: 200;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
 
 .hidden {
     animation: hiddenAnimation both;

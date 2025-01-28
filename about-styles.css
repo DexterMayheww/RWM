@@ -13,7 +13,7 @@
 }
 
 body {
-    /* background-color: #FBEFCC; */
+    background-color: #d1e6ba;
     background-image: url('Images/logorwm.png');
     background-repeat: space;
     background-size: 50%;
@@ -42,8 +42,7 @@ body {
 
 .navbar {
     top: 0;
-    /* background-color: #253B1A; */
-    background-color: white;
+    background-color: #e5f5dc;
     height: 80px;
     font-family: "Kumbh Sans", serif;
     display: flex;
@@ -162,7 +161,7 @@ body {
     width: 100%;
     border: none;
     outline: none;
-    border-radius: 30px;
+    border-radius: 13px;
     background-color: #198754;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -180,9 +179,9 @@ body {
     width: 0%;
     height: 100%;
     z-index: -1;
-    background-color: #87194C;
+    background-color: #166f01;
     transition: all 0.35s ease;
-    border-radius: 30px;
+    border-radius: 13px;
 }
 
 .button p {
@@ -258,7 +257,7 @@ body {
         /* background-color: #253B1A; */
         border-bottom-left-radius : 20px;
         border-bottom-right-radius : 20px;
-        top: 100%;
+        top: 145%;
         transition: all 0.5s ease;
         z-index: 99;
         height: 45vh;
@@ -267,21 +266,35 @@ body {
     }
 
     .navbar-menu.active .menu-item {
+        width: 80%;
         padding-top: 0px;
-        padding-bottom: 0px;
-    }
-
-    .navbar-menu.active li ul li:nth-child(1) {
-        padding-top: 0px;
-    }
-
-    .navbar-menu.active li ul li:nth-child(3) {
         padding-bottom: 0px;
     }
 
     .navbar-menu.active .menu-item ul {
         width: 100%;
         display: flex;
+    }
+
+    .menu-item ul li {
+        width: 50%;
+        padding: 10px 0;
+        border: 1px solid #000;
+        border-radius: 8px;
+    }
+
+    .menu-item ul li::after {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5px;
+    }
+
+    .menu-item ul li:nth-child(3)::after {
+        width: 50%;
+    }
+
+    .menu-item ul li:hover::after {
+        width: 50%;
     }
 
     .navbar .navbar-toggle {
@@ -341,7 +354,7 @@ body {
 }
 
 .main {
-    background-color: #000;
+    background-color: #d1e6ba;
     padding: 50px 50px 150px 50px;
     width: 100%;
     display: flex;
@@ -546,6 +559,9 @@ body {
     padding-top: 25px;
     padding-bottom: 25px;
     text-align: center;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 960px) {
