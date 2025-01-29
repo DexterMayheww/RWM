@@ -1258,9 +1258,9 @@ margin: 0;
     border-radius: 10px;
 }
 
-.location-detail .search-bar h1 {
+.location-detail .search-bar p {
     font-family: "Arial";
-    font-size: 0.875rem;
+    font-size: 1.5rem;
     color: white;
     font-weight: 300;
     text-wrap: wrap;
@@ -1275,7 +1275,7 @@ margin: 0;
     filter: invert(99%) sepia(0%) saturate(7498%) hue-rotate(107deg) brightness(112%) contrast(100%);
 }
 
-.location h3 {
+.location p {
     text-align: left;
     font-size: 4rem;
     font-weight: 600;
@@ -1321,6 +1321,12 @@ margin: 0;
     height: 30%;
     border-radius: 20px;
     background: linear-gradient(to bottom, transparent, black);
+}
+
+@media screen and (max-width: 1260px) {
+    .location-detail .search-bar p {
+        font-size: 1.1rem;
+    }
 }
 
 @media screen and (max-width: 960px) {

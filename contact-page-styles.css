@@ -406,13 +406,13 @@ body {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
 }
 
 .main .working-time {
-    width: 100%;
-    height: 200px;
+    width: 98%;
+    height: 175px;
     background-color: #315335;
     border-radius: 15px;
     padding: 10px 20px;
@@ -420,17 +420,28 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "Space Mono";
 }
 
 .working-time p {
-    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #fff;
 }
 
 .working-time .day-time {
     width: 100%;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin: 0;
+    }
 }
 
 .main .wrapper-container {
@@ -601,13 +612,27 @@ body {
         flex-direction: column;
     }
 
+    .main .working-time .day-time {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p:nth-child(1) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .main .wrapper-container {
+        flex-direction: column;
+    }
+
     .main .contact-wrapper, .main .time-wrapper-container {
         width: 100%;
     }
 
     .contact-wrapper .service-wrapper {
         min-height: 350px;
-        width: 90%;
+        width: 80%;
         min-width: 100px;
     }
 
@@ -617,6 +642,30 @@ body {
 
     .main .qr-text {
         bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .main .working-time {
+        p {
+            font-size: 1.8rem;
+        }
+
+        .day-time p {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main .working-time {
+        p {
+            font-size: 1.4rem;
+        }
+
+        .day-time p {
+            font-size: 0.75rem;
+        }
     }
 }
 
@@ -666,10 +715,6 @@ body {
 .contact .contact-wrapper:nth-child(1) img {
     width: 72px;
     height: 96px;
-}
-
-.contact-wrapper:nth-child(2) p {
-    padding-bottom: 10px;
 }
 
 .contact-wrapper:nth-child(3) p {
