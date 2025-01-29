@@ -1,6 +1,6 @@
 // Mobile menu toggle
 const menu = document.querySelector('.navbar-toggle');
-const menuLinks = document.querySelector('.navbar-menu');
+const menuLinks = document.querySelector('.navbar-menu-mobile');
 
 menu.addEventListener('click', function() {
     menu.classList.toggle('is-active');

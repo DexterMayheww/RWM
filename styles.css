@@ -94,7 +94,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.navbar-menu {
+.navbar-menu, .navbar-menu-mobile {
     min-width: 60%;
     list-style-type: none;
     display: flex;
@@ -103,7 +103,7 @@ body {
     justify-content: space-between;
 }
 
-.navbar-menu .menu-item ul {
+.navbar-menu .menu-item ul, .navbar-menu-mobile .menu-item ul {
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -136,7 +136,7 @@ body {
     width: 100%;
 }
 
-.navbar-menu a {
+.navbar-menu a, .navbar-menu-mobile a {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
@@ -144,7 +144,7 @@ body {
     color: black;
 }
 
-.navbar-menu a:hover {
+.navbar-menu a:hover, .navbar-menu-mobile a:hover {
     color: #206e4a;
     transition: all 0.3s ease;
 }
@@ -154,7 +154,7 @@ body {
     display: none;
 }
 
-.navbar-menu .profile {
+.navbar-menu .profile, .navbar-menu-mobile .profile {
     display: flex;
 }
 
@@ -201,6 +201,10 @@ body {
     width: 100%;
 }
 
+.navbar-menu-mobile {
+    display: none;
+}
+
 @media screen and (max-width: 960px) {
     .navbar-container {
         display: flex;
@@ -227,10 +231,10 @@ body {
         margin: 0 auto;
     }
 
-    .navbar-menu {
+    .navbar-menu, .navbar-menu-mobile {
         top: 30px;
         margin: 0;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
@@ -244,24 +248,36 @@ body {
         background-color: white;
     }
 
-    .navbar-menu .menu-item {
+    .navbar-menu-mobile {
+        display: flex;
+        box-shadow: 0 10px 25px 0 #0000008c;
+    }
+
+    .navbar-menu-mobile .menu-item {
         height: 70%;
     }
 
-    .navbar-menu .profile {
-        width: 70%;
-        height: 30%;
+    .navbar-menu-mobile .profile {
+        width: 80%;
+        height: 25%;
         padding-left: 0;
+        justify-content: center;
+
+        a {
+            width: 60%;
+            margin-top: 20px;
+        }
     }
 
-    .navbar-menu .menu-item ul {
+    .navbar-menu-mobile .menu-item ul {
+        padding: 0;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
     }
 
-    .navbar-menu.active {
+    .navbar-menu-mobile.active {
         /* background-color: #253B1A; */
         border-bottom-left-radius : 20px;
         border-bottom-right-radius : 20px;
@@ -273,36 +289,55 @@ body {
         font-size: 1.6rem;
     }
 
-    .navbar-menu.active .menu-item {
+    .navbar-menu-mobile.active .menu-item {
         width: 80%;
         padding-top: 0px;
         padding-bottom: 0px;
     }
 
-    .navbar-menu.active .menu-item ul {
+    .navbar-menu-mobile .active .menu-item ul {
         width: 100%;
         display: flex;
     }
 
     .menu-item ul li {
-        width: 50%;
-        padding: 10px 0;
+        width: 60%;
         border: 1px solid #000;
         border-radius: 8px;
+        transition: all 0.3s ease;
+
+        a {
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            z-index: 0;
+        }
+    }
+
+    .menu-item ul li:hover {
+        border-color: #e5f5dc;
     }
 
     .menu-item ul li::after {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 5px;
+        height: 100%;
+        background-color: #e5f5dc;
+        bottom: 0px;
+        z-index: -1;
+        border-radius: 8px;
     }
 
     .menu-item ul li:nth-child(1)::after {
-        width: 50%;
+        width: 100%;
     }
 
     .menu-item ul li:hover::after {
-        width: 50%;
+        width: 100%;
+    }
+
+    .menu-item ul li img {
+        filter: invert(1);
+        margin: 0 30px;
+        width: 25px;
     }
 
     .navbar .navbar-toggle {
@@ -352,6 +387,16 @@ body {
 
     .navbar-toggle.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .menu-item ul li a {
+        justify-content: flex-start;
+    }
+
+    .menu-item ul li img {
+        margin: 0 20px;
     }
 }
 
@@ -499,6 +544,7 @@ body {
     display: flex;
     justify-content: center;
     transition: all 0.3s ease;
+    box-shadow: 0 3px 5px 0 #0000008c;
 }
 
 .button-background .cover {
@@ -627,9 +673,6 @@ margin: 0;
     }
     .main-contact .buttons {
         width: 70%;
-    }
-    .main-specialization {
-        /* flex-direction: column-reverse; */
     }
     
     .main-specialization .text {
@@ -1004,6 +1047,12 @@ margin: 0;
     font-family: "Kumbh Sans", sans-serif;
     display: flex;
     flex-direction: column;
+    box-shadow: 1px 2px 10px 0 #315335;
+    transition: all 0.2s ease;
+}
+
+.price-wrapper-container .price-wrapper:hover {
+    box-shadow: 3px 4px 20px 0 #315335;
 }
 
 .price-wrapper-container .price-wrapper:nth-child(2) {
@@ -1276,9 +1325,10 @@ margin: 0;
 }
 
 .location p {
+    font-family: "Anton";
     text-align: left;
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 300;
     margin-bottom: 35px;
 }
 
@@ -1548,9 +1598,8 @@ margin: 0;
     flex-direction:row;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     background-color: #e5f5dc;
+    font-family: "Kumbh Sans", sans-serif;
 }
 
 .contact .contact-wrapper {
@@ -1563,14 +1612,8 @@ margin: 0;
 }
 
 .contact-wrapper .social-media img {
-    width: 40px;
-    height: 40px;
-}
-
-.contact-wrapper .social-media img {
-    border: 1px solid black;
-    border-radius: 50%;
-    padding: 3px;
+    width: 35px;
+    margin: 0 5px;
 }
 
 .contact-wrapper .social-media img:hover {
@@ -1634,23 +1677,24 @@ margin: 0;
 
     .footer .contact {
         flex-direction: column;
+        min-height: 0;
     }
 
     .contact .contact-wrapper {
         width: 90%;
+        min-height: 0;
     }
 
     .contact .contact-wrapper:nth-child(1) {
         flex-direction: column;
-        padding-bottom: 10px;
+        margin-bottom: 20px;
     }
 
-    .contact-wrapper:nth-child(2) p {
-        padding-bottom: 5px;
-    }
-
-    .contact-wrapper:nth-child(3) p {
-        padding-top: 5px;
+    .contact-wrapper:nth-child(2) {
+        margin-bottom: 20px;
+        p {
+            padding-bottom: 5px;
+        }
     }
 }
 
