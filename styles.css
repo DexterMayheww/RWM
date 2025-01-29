@@ -1361,17 +1361,11 @@ margin: 0;
     height: 100%;
     border-radius: 20px;
     border: 2px solid black;
+    transition: all 0.3s ease;
 }
 
-.map::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30%;
-    border-radius: 20px;
-    background: linear-gradient(to bottom, transparent, black);
+.map iframe:hover {
+    box-shadow: 5px 5px 25px 0 #315335;
 }
 
 @media screen and (max-width: 1260px) {
@@ -1389,7 +1383,7 @@ margin: 0;
         align-items: center;
     }
 
-    .location h3 {
+    .location p {
         font-size: 3rem;
         text-align: center;
     }
@@ -1403,7 +1397,6 @@ margin: 0;
     .location-detail .search-bar {
         margin: 0;
     }
-
 }
 
 .footer {
