@@ -1303,7 +1303,7 @@ margin: 0;
     align-items: center;
     justify-content: center;
     margin: 0 10px 35px 0;
-    padding: 10px 15px 10px 15px;
+    padding: 15px 20px;
     border-radius: 10px;
 }
 
@@ -1313,6 +1313,7 @@ margin: 0;
     color: white;
     font-weight: 300;
     text-wrap: wrap;
+    margin-bottom: 0;
 }
 
 .location-detail .search-bar img {
@@ -1375,7 +1376,7 @@ margin: 0;
 
 @media screen and (max-width: 1260px) {
     .location-detail .search-bar p {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
 }
 
