@@ -727,8 +727,7 @@ body {
 
 .footer .contact {
     width: 100%;
-    min-height: 200px;
-    padding-bottom: 20px;
+    min-height: 130px;
     display: flex;
     flex-direction:row;
     justify-content: center;
@@ -742,7 +741,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 33%;
-    min-height: 150px;
 }
 
 .contact-wrapper .social-media img {
@@ -769,6 +767,12 @@ body {
     padding-bottom: 10px;
 }
 
+.footer span {
+    width: 100%;
+    height: 1px;
+    border: 1px solid rgba(163, 161, 161, 0.2);
+}
+
 .footer .copyright {
     font-weight: 200;
     padding-top: 25px;
@@ -789,6 +793,7 @@ body {
     .contact .contact-wrapper {
         width: 90%;
         min-height: 0;
+        margin-bottom: 20px;
 
         p {
             margin: 0;

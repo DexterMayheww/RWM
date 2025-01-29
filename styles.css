@@ -1592,8 +1592,7 @@ margin: 0;
 
 .footer .contact {
     width: 100%;
-    min-height: 200px;
-    padding-bottom: 20px;
+    min-height: 130px;
     display: flex;
     flex-direction:row;
     justify-content: center;
@@ -1608,7 +1607,6 @@ margin: 0;
     justify-content: center;
     align-items: center;
     width: 33%;
-    min-height: 150px;
 }
 
 .contact-wrapper .social-media img {
@@ -1683,6 +1681,7 @@ margin: 0;
     .contact .contact-wrapper {
         width: 90%;
         min-height: 0;
+        margin-bottom: 20px;
     }
 
     .contact .contact-wrapper:nth-child(1) {
