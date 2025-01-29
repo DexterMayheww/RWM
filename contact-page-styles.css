@@ -144,9 +144,6 @@ body {
 
 .navbar-menu .profile {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 180px;
 }
 
 .profile .button {
@@ -191,6 +188,7 @@ body {
 .button:hover .cover {
     width: 100%;
 }
+
 
 @media screen and (max-width: 960px) {
     .navbar-container {
@@ -357,7 +355,6 @@ body {
     width: 100%;
     height: fit-content;
     padding: 10px 0;
-    margin: 0 auto 30px auto;
     color: #000;
     background-color: #e5f5dc;
     overflow: hidden;
@@ -406,11 +403,40 @@ body {
     padding: 50px 50px 150px 50px;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     position: relative;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
+}
+
+.main .working-time {
+    width: 100%;
+    height: 200px;
+    background-color: #315335;
+    border-radius: 15px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.working-time p {
+    margin-bottom: 50px;
+}
+
+.working-time .day-time {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.main .wrapper-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .main .contact-wrapper {
@@ -430,7 +456,7 @@ body {
 }
 
 .contact-wrapper h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
 }
 
 .contact-wrapper ul li button, .contact-wrapper p {
@@ -500,7 +526,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
     width: 80%;
-    min-height: 300px;
     margin: 20px;
     padding: 20px 20px 20px 30px;
     font-family: "Kumbh Sans", sans-serif;

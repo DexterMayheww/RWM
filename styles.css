@@ -367,6 +367,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-top: 30px;
     /* backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px); */
 }
@@ -378,7 +379,6 @@ body {
     width: 100%;
     height: fit-content;
     padding: 10px 0;
-    margin: 0 auto 30px auto;
     color: #000;
     background-color: #e5f5dc;
     overflow: hidden;
