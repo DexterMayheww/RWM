@@ -413,6 +413,7 @@ body {
     align-items: center;
     position: relative;
     padding-top: 30px;
+    background-color: #d1e6ba;
     /* backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px); */
 }
@@ -475,7 +476,6 @@ body {
     justify-content: center;
     align-items: center;
     padding-bottom: 80px;
-    background-color: #d1e6ba;
 }
 
 .main-contact .text {
