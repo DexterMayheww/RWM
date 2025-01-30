@@ -249,6 +249,8 @@ body {
     }
 
     .navbar-menu-mobile {
+        width: 70%;
+        right: 0;
         display: flex;
         box-shadow: 0 10px 25px 0 #0000008c;
     }
@@ -258,19 +260,30 @@ body {
     }
 
     .navbar-menu-mobile .profile {
-        width: 80%;
+        width: 90%;
         height: 25%;
         padding-left: 0;
         justify-content: center;
+        margin-bottom: 30px;
+
+        img {
+            width: 25px;
+            margin: 0 30px 0 0;
+        }
 
         a {
-            width: 60%;
-            margin-top: 20px;
+            width: 100%;
+            margin-top: 15px;
         }
+    }
+
+    .button:hover {
+        transform: scale(1.05);
     }
 
     .navbar-menu-mobile .menu-item ul {
         padding: 0;
+        margin-top: 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -284,13 +297,13 @@ body {
         top: 145%;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 45vh;
+        height: 22vh;
         opacity: 1;
         font-size: 1.6rem;
     }
 
     .navbar-menu-mobile.active .menu-item {
-        width: 80%;
+        width: 95%;
         padding-top: 0px;
         padding-bottom: 0px;
     }
@@ -301,7 +314,7 @@ body {
     }
 
     .menu-item ul li {
-        width: 60%;
+        width: 95%;
         border: 1px solid #000;
         border-radius: 8px;
         transition: all 0.3s ease;
@@ -336,7 +349,7 @@ body {
 
     .menu-item ul li img {
         filter: invert(1);
-        margin: 0 30px;
+        margin: 0 30px 0 0;
         width: 25px;
     }
 
@@ -396,6 +409,15 @@ body {
     }
 
     .menu-item ul li img {
+        margin: 0 20px;
+    }
+
+    .profile .button {
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+
+    .navbar-menu-mobile .profile img {
         margin: 0 20px;
     }
 }
@@ -1282,7 +1304,6 @@ margin: 0;
     padding-top: 70px;
     padding-bottom: 50px;
     width: 100%;
-    height: 60vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -1338,7 +1359,8 @@ margin: 0;
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 90%;
+    min-height: 300px;
+    height: clamp(300px, 100%, 500px);
     margin-right: 30px;
     position: relative;
 }
@@ -1358,7 +1380,8 @@ margin: 0;
 
 .map iframe {
     width: 100%;
-    height: 100%;
+    min-height: 300px;
+    height: 80%;
     border-radius: 20px;
     border: 2px solid black;
     transition: all 0.3s ease;
@@ -1379,7 +1402,7 @@ margin: 0;
 
 @media screen and (max-width: 960px) {
     .location {
-        height: 85vh;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1690,6 +1713,14 @@ margin: 0;
         margin-bottom: 20px;
         p {
             padding-bottom: 5px;
+        }
+    }
+
+    .footer .copyright {
+        flex-direction: column;
+
+        p:nth-child(1) {
+            margin-bottom: 10px;
         }
     }
 }
