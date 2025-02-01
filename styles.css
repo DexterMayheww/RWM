@@ -95,7 +95,7 @@ body {
 }
 
 .navbar-menu, .navbar-menu-mobile {
-    min-width: 60%;
+    min-width: 55%;
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -526,18 +526,18 @@ body {
     padding: 10px 10px 20px 10px;
     font-size: 1.5rem;
     text-align: center;
-    font-family: "Space Mono";
+    font-family: "Kumbh Sans";
 }
 
 .main-contact h5 {
-    font-family: "Space Mono";
+    font-family: "Kumbh Sans";
     font-size: 1rem;
     font-weight: 500;
     padding-bottom: 30px;
 }
 
 .main-contact .buttons {
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -546,7 +546,7 @@ body {
 }
 
 .main-contact .buttons .button-background {
-    margin: 5px;
+    margin: 10px 20px;
     text-decoration: none;
     text-align: center;
     color: #fff;
@@ -1630,7 +1630,7 @@ margin: 0;
 }
 
 .contact-wrapper .social-media img {
-    width: 35px;
+    width: 30px;
     margin: 0 5px;
 }
 
@@ -1644,17 +1644,27 @@ margin: 0;
     flex-direction: row;
 }
 
+.contact .contact-wrapper:nth-child(3) {
+    flex-direction: row;
+}
+
 .contact-wrapper:nth-child(1) img {
     width: 72px;
     height: 96px;
 }
 
-.contact-wrapper:nth-child(2) p {
+.contact-wrapper:nth-child(2) button {
+    font-size: 1.2rem;
+    font-family: "Kumbh Sans";
+    border: none;
+    cursor: pointer;
+    background-color: #e5f5dc;
     padding-bottom: 10px;
 }
 
 .contact-wrapper:nth-child(3) p {
-    padding-bottom: 10px;
+    font-size: 1.5rem;
+    padding-bottom: 5px;
 }
 
 .footer .copyright {
