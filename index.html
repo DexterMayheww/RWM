@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rural Waste Management</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="app.js"></script>
     <link rel="icon" type="image/x-icon" href="Images/rwm.ico">
 </head>
-<body>
+<body class="disable-scroll">
+    <div id="loading"></div>
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-logo">
@@ -52,16 +52,17 @@
         <div class="main-contact">
             <div class="text">
                 <h1>Have unwanted scrap lying around?</h1>
-                <h3>Allow us to manage your unwanted plastic and metal waste if you're located in a rural area.</h3>
-                <h5>Transform your recyclable waste into rewards and join us in fostering a sustainable circular economy!</h5>
+                <h3>Allow us to manage your rural plastic and metal waste efficiently.</h3>
+                <!-- <h3>Allow us to manage your unwanted plastic and metal waste if you're located in a rural area.</h3> -->
+                <!-- <h5>Transform your recyclable waste into rewards and join us in fostering a sustainable circular economy!</h5> -->
             </div>
             <div class="buttons">
                 <a href="contact-page.html" class="button-background"><span class="cover"></span><p>Contact Us</p></a>
-                <a href="#" class="button-background"><span class="cover"></span><p>Location</p></a>
+                <a href="#location" class="button-background"><span class="cover"></span><p>Location</p></a>
             </div>
         </div>
         <div class="main-specialization">
-            <div class="text">
+            <!-- <div class="text">
                 <p class="what-do-we-do">What do we do?</p>
                 <p class="first-paragraph">We specialize in buying and managing household waste to create a cleaner and more sustainable environment.</p>
                 <p class="second-paragraph">By partnering with us, you contribute to reducing landfill waste and promoting recycling efforts, making a positive impact on the planet. Join us in our mission to turn everyday waste into opportunities for a greener future.</p>
@@ -78,6 +79,52 @@
                     <li>2. In the contact page section choose your preference and contact us
                         to sell.</li>
                 </ul>
+            </div> -->
+
+            <div class="mobile-text">
+                <div class="first-text-block">
+                    <p>What do we do?</p>
+                    <p>We specialize in buying and managing household waste to create a cleaner and more sustainable environment.</p>
+                    <p>By partnering with us, you contribute to reducing landfill waste and promoting recycling efforts, making a positive impact on the planet. Join us in our mission to turn everyday waste into opportunities for a greener future.</p>
+                </div>
+                <div class="second-text-block">
+                    <img class="hidden" src="Images/Thinking face-cuate.png" alt="Thinking">
+                    <p>How to Sell Your Collected Plastics and Metals?</p>
+                    <ul>
+                        <li>We appreciate your efforts in contributing to a cleaner environment
+                            by collecting plastics and metals. Follow these simple steps to sell
+                            your collected materials:</li>
+                        <li>1. Click on the "Contact us" button and navigate to the
+                            contact page.</li>
+                        <li>2. In the contact page section choose your preference and contact us
+                            to sell.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text">
+                <div class="text-wrapper">
+                    <div class="first-text-block">
+                        <p>What do we do?</p>
+                        <p>We specialize in buying and managing household waste to create a cleaner and more sustainable environment.</p>
+                        <p>By partnering with us, you contribute to reducing landfill waste and promoting recycling efforts, making a positive impact on the planet. Join us in our mission to turn everyday waste into opportunities for a greener future.</p>
+                    </div>
+                    <div class="second-text-block">
+                        <p>How to Sell Your Collected Plastics and Metals?</p>
+                        <ul>
+                            <li>We appreciate your efforts in contributing to a cleaner environment
+                                by collecting plastics and metals. Follow these simple steps to sell
+                                your collected materials:</li>
+                            <li>1. Click on the "Contact us" button and navigate to the
+                                contact page.</li>
+                            <li>2. In the contact page section choose your preference and contact us
+                                to sell.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="Images/Thinking face-cuate.png" alt="Thinking">
+                </div>
             </div>
             <!-- <p class="selling-text">How to Sell Your Collected Plastics and Metals?<br><br>
                 <span class="spacer"><img class="hidden" src="Images/Thinking face-cuate.png" alt="Thinking"></span>
@@ -249,10 +296,13 @@
     <div class="location" id="location">
         <div class="location-detail">
             <div class="search-bar">
-                <p>Where is Rural Waste Management located?</p>
+                <div>
+                    <img src="Images/google.png" alt="google">
+                    <p>Where is Rural Waste Management located?</p>
+                </div>
                 <img src="Images/search.svg" alt="Search">
             </div>
-            <p>We are located in<br>Lamsang Makha Leikai, Ngariyambam, Manipur 795113</p>
+            <p>We are located in Lamsang Makha Leikai, Ngariyambam, Manipur - 795113</p>
         </div>
         <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8713.35287746767!2d93.85994383873216!3d24.825102201311328!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37492900086fec31%3A0x27346ab717776e11!2sRural%20waste%20management!5e1!3m2!1sen!2sin!4v1735363244602!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -260,8 +310,7 @@
     </div>
     <div class="footer">
         <div class="rating">
-            <h1>Ratings from our customers!</h1>
-            <span></span>
+            <p class="rating-top">Ratings from our customers!</p>
             <div class="rating-wrapper-container">
                 <button class="prev-btn"><img src="Images/chevron-right.svg" alt="Prev"></button>
                 <button class="next-btn"><img src="Images/chevron-right.svg" alt="Next"></button>
@@ -350,7 +399,7 @@
             <div class="contact-wrapper">
                 <p>Need support?</p>
                 <div class="email">
-                    <button class="contact-button" onclick="location.href='mailto:ruralwaste18man@gmail.com'"><span class="cover"></span>ruralwaste18man@gmail.com</button>
+                    <button class="contact-button" onclick="location.href='mailto:ruralwaste18man@gmail.com'">ruralwaste18man@gmail.com</button>
                 </div>
             </div>
             <div class="contact-wrapper">
@@ -363,9 +412,10 @@
         </div>
         <span></span>
         <div class="copyright">
-            <p>Created by Team Synkronix</p>
+            <p>Designed and developed by <a href="https://www.instagram.com/synkro_nix/" target="_blank">Synkronix</a></p>
             <p>Rural Waste Management © Copyright 2024 All Rights Reserved</p>
         </div>
     </div>
+    <script defer src="app.js"></script>
 </body>
 </html>
