@@ -7,6 +7,16 @@ menu.addEventListener('click', function() {
     menuLinks.classList.toggle('active');
 });
 
+//Loading
+document.documentElement.style.scrollBehavior = 'auto';         // Disables scroll behavior when loading
+window.scrollTo(0, 0);
+document.body.classList.add('disable-scroll');
+const loader = document.getElementById('loading');
+window.addEventListener('load', function() {
+    loader.style.display = 'none';
+    this.document.body.classList.remove('disable-scroll');
+    document.documentElement.style.scrollBehavior = 'smooth';   // Sets scroll behavior to smooth for scrolling in page on links like 'location'
+})
 
 // Fly in animation
 const observer = new IntersectionObserver((entries) => {
