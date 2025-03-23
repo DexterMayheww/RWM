@@ -39,7 +39,7 @@ const slider = document.querySelector('.rating-slider');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 const allSlides = document.querySelectorAll('.rating-wrapper');
-const mediaQuery = window.matchMedia('(max-width: 960px)');
+const mediaQuery = window.matchMedia('(max-width: 1160px)');
 
 if(!mediaQuery.matches) {
     slider.firstElementChild.nextElementSibling.classList.add('focused');
